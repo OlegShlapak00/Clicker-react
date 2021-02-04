@@ -1,0 +1,106 @@
+.input {
+  position: relative;
+  background: linear-gradient(45deg, black 0%, #8c3535 49%, #d21a1a 100%);
+  padding: 3px;
+  display: inline-block;
+  border-radius: 9999em; }
+  .input *:not(span) {
+    position: relative;
+    display: inherit;
+    border-radius: inherit;
+    margin: 0;
+    border: none;
+    outline: none;
+    padding: 0 .325em;
+    z-index: 1; }
+    .input *:not(span):focus + span {
+      opacity: 1;
+      transform: scale(1); }
+  .input span {
+    transform: scale(0.993, 0.94);
+    transition: transform .5s, opacity .25s;
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
+    margin: 4px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #ac2828, -3px 3px 30px #d21a1a; }
+
+.greetInput {
+  font-size: 20px;
+  font-family: inherit;
+  line-height: 1.5em;
+  color: #2e3750;
+  min-width: 12em; }
+
+::placeholder {
+  color: red; }
+
+.greetingPlayer {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.title {
+  align-self: center;
+  padding-bottom: 30px; }
+
+.askName {
+  align-self: flex-start; }
+
+.userName {
+  padding-bottom: 20px; }
+
+.btn {
+  background: #222;
+  height: 50px;
+  min-width: 150px;
+  border: none;
+  border-radius: 10px;
+  color: red;
+  font-size: 40px;
+  font-family: 'Cookie', cursive;
+  position: relative;
+  transition: 1s;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 5px; }
+
+.btn .circle {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  transition: 500ms; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.btn:hover {
+  background: transparent; }
+
+.btn:hover .circle {
+  height: 50px;
+  width: 150px;
+  left: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #eee; }
+
+/*# sourceMappingURL=Greeting.module.css.map */

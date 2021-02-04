@@ -1,0 +1,53 @@
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+}
+.gameInput[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+
+
+.gameLabel {
+  outline: none;
+  user-select: none;
+  color: black;
+  font-family: 'Lato', sans-serif;
+  font-size: 2.5rem;
+  padding: 5px;
+  letter-spacing: 0.04rem;
+  cursor: pointer;
+  border-radius: 100px;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  z-index: 99;
+
+
+
+  box-shadow: 0 7px 0 0 red;
+  &:active {
+    top: 3px;
+    box-shadow: none;
+  }
+}
+.score{
+  padding-top: 20px;
+}
+.score, .timeLeft{
+  font-size: 30px;
+  font-family: 'Cookie', cursive;
+}
+.gameLabel::after {
+  position: absolute;
+  top: -4px; bottom: -4px;
+  left: -4px; right: -4px;
+  background: red;
+  content: '';
+  z-index: -1;
+  border-radius: 100px;
+}

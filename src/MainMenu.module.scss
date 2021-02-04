@@ -1,0 +1,187 @@
+.radioButtons {
+  min-height: inherit;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.radioButtons::before {
+  width: 30px;
+  height: 30px;
+  background: var(--primary);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  top: 18px;
+  left: 18px;
+}
+
+
+
+.dark {
+  --primary: hsl(1, 100%, 68%);
+  --other: hsl(0, 0%, 90%);
+}
+
+
+
+
+
+/* label */
+.menuLabel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  margin: 12px 0;
+
+  cursor: pointer;
+  position: relative;
+}
+
+
+/* input */
+.menuInput {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+
+/* .design */
+.design {
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid var(--other);
+  border-radius: 100%;
+  margin-right: 16px;
+
+  position: relative;
+}
+
+.design::before,
+.design::after {
+  content: "";
+  display: block;
+
+  width: inherit;
+  height: inherit;
+
+  border-radius: inherit;
+
+  position: absolute;
+  transform: scale(0);
+  transform-origin: center center;
+}
+
+.design:before {
+  background: var(--other);
+  opacity: 0;
+  transition: .3s;
+}
+
+.design::after {
+  background: var(--primary);
+  opacity: .4;
+  transition: .6s;
+}
+
+
+/* .text */
+.text {
+  color: var(--other);
+  font-weight: bold;
+}
+
+.menuInput:checked+.design::before {
+  opacity: 1;
+  transform: scale(.6);
+}
+
+
+/* other states */
+.menuInput:hover+.design,
+.menuInput:focus+.design {
+  border: 1px solid var(--primary);
+}
+
+.menuInput:hover+.design:before,
+.menuInput:focus+.design:before {
+  background: var(--primary);
+}
+
+.menuInput:hover~.text {
+  color: var(--primary);
+}
+
+.menuInput:focus+.design::after,
+.menuInput:active+.design::after {
+  opacity: .1;
+  transform: scale(2.6);
+}
+.btn {
+  background: #222;
+  height: 50px;
+  min-width: 150px;
+  border: none;
+  border-radius: 10px;
+  color: red;
+  font-size: 40px;
+  font-family: 'Cookie', cursive;
+  position: relative;
+  transition: 1s;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+.btn .circle {
+  color: red;
+  width: 10px;
+  height: 5px;
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  transition: 500ms;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn:hover {
+  background: transparent;
+}
+
+.btn:hover .circle {
+  height: 50px;
+  width: 100%;
+  left: 0;
+  border-radius: 0;
+  border-bottom: 2px solid #eee;
+}
+.choose-time{
+  font-size: 30px;
+}
+.best-score{
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+.best-player{
+  padding-bottom: 20px;
+}
